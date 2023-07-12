@@ -1,0 +1,22 @@
+<p>task works!</p>
+<input  [(ngModel)]="name" ><button (click)="ajouter()">ajouter</button>
+<button (click)="update()">update</button>
+<input type="hidden"  [(ngModel)]="id">
+
+{{ name }}
+<table>
+  <tr>
+    <th>id</th>
+
+    <th>NAME</th>
+  </tr>
+  <tbody>
+    <tr *ngFor="let value of data">
+
+      <td>{{ value.id }}</td>
+      <td>{{ value.name }}</td>
+      <button (click)="supprimer(value.id)">supp</button>
+      <button (click)="edit(value.id)">mod</button>
+    </tr>
+  </tbody>
+</table>

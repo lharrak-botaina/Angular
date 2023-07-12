@@ -1,0 +1,12 @@
+<p>task works!</p>
+<ng-container *ngIf="ifRoleIsDesined">
+  <div *ngIf="adminRole ; else notAdmin">
+    user is an admin
+  </div>
+  <ng-template #notAdmin>
+    user IS not the the Admin
+  </ng-template>
+</ng-container>
+
+
+
