@@ -13,6 +13,7 @@ import { AdminManageComponent } from './admin-manage/admin-manage.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
 import { adminAccessGuard } from './admin-access.guard';
+import { PaymentComponent } from './payment/payment.component';
 
 
 
@@ -46,7 +47,8 @@ const routes: Routes = [
   canActivate:[authGuard]
 },
 //--------------------lazy Loading--------------------------------------------
-  { path: 'payment', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule) },
+  // { path: 'payment', loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule) },
+  {path:'payment',component:PaymentComponent},
 //-----------------------------------------------------------------------------
 {
   path: 'admin',
@@ -57,7 +59,7 @@ const routes: Routes = [
       component: AdminComponent,
     },
     {
-    
+
       path:'',
       canActivateChild: [adminAccessGuard],
       children: [
