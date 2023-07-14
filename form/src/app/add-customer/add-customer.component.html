@@ -1,0 +1,8 @@
+<form #addCustomerForm="ngForm" (submit)="addCustomer(addCustomerForm)">
+  <input type="text" required [(ngModel)]="firstName" name="firstName">
+  <input type="checkbox" name="check"  [(ngModel)]="check" >
+  <button type="submit" [disabled]="!addCustomerForm.valid">ADD</button>
+  <button (click)="reset(addCustomerForm)">reset</button>
+  <button (click)="setForm(addCustomerForm)">set value</button>
+</form>
+{{ firstName }}

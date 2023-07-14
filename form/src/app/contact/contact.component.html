@@ -1,0 +1,6 @@
+<p>contact works!</p>
+<form [formGroup]="addContactForm" >
+  <input type="text" formControlName="firstName" (keyup)="trackName()" name="firstName">
+  <input type="text"  formControlName="lastName" name="lastName">
+  <button (click)="add()" [disabled]="!addContactForm.valid" type="submit" >add</button>
+</form>
